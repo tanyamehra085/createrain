@@ -275,7 +275,7 @@ export default function CampaignPage() {
                   textAlign: "left",
                 }}
               >
-                Matching Keywords
+                {t("MatchingKeywords")}
               </Typography>
               <Stack
                 direction="row"
@@ -380,7 +380,7 @@ export default function CampaignPage() {
                 textAlign: "left",
               }}
             >
-              Influencer Results
+              {t("InfluencerResults")}
             </Typography>
 
             {error && (

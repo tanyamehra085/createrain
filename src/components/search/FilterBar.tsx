@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import 
+import { useTranslation } from "react-i18next";
 
 interface FilterBarProps {
   minFollowers: number;
@@ -28,10 +29,10 @@ const FilterBar: React.FC<FilterBarProps> = ({ minFollowers, maxFollowers, onFil
     setMaxValue(value);
     onFilterChange(minValue, value);
   };
-
+ const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center justify-center p-4 mb-4 FilterbyBg shadow-md rounded-2xl  ">
-      <h3 className="text-lg font-semibold text-[#2E354F] mb-1">Filter by Followers</h3>
+      <h3 className="text-lg font-semibold text-[#2E354F] mb-1">{t("FilterbyFollowers")}</h3>
       <div className="flex flex-col w-full max-w-md">
         <div className="flex justify-between text-sm text-gray-600 mb-2">
           <span>{minValue.toLocaleString()}</span>

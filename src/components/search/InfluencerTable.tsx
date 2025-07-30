@@ -5,6 +5,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import FilterBar from "./FilterBar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 interface Influencer {
   id: number;
@@ -40,7 +41,7 @@ const InfluencerTable: React.FC<InfluencerTableProps> = ({
   const itemsPerPage = 13;
 
   const [fetchCount, setFetchCount] = useState<number>(initialFetchCount);
-
+const { t } = useTranslation();
   useEffect(() => {
     setFetchCount(initialFetchCount);
   }, [initialFetchCount]);
@@ -319,9 +320,7 @@ const InfluencerTable: React.FC<InfluencerTableProps> = ({
           {currentPage === Math.ceil(filteredData.length / itemsPerPage) && (
             <div className="mt-3 mb-3 FilterbyBg p-3">
               <p className="text-sm text-yellow-800">
-                <strong>Note:</strong> This preview shows the first 100 matched
-                influencers. For full access to all matches, detailed analytics,
-                and advanced filtering options, please upgrade to our premium
+                <strong>Note:</strong> {t("Thispreview")}
                 plan.
               </p>
             </div>

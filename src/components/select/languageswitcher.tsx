@@ -19,16 +19,16 @@ const languages = [
     label: "Chinese",
     flag: "https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png",
   },
-   {
-    code: "ru",
-    label: "Russian",
-    flag: "https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png",
-  },
-   {
-    code: "ar",
-    label: "Arabic",
-    flag: "https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png",
-  },
+  //  {
+  //   code: "ru",
+  //   label: "Russian",
+  //   flag: "https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png",
+  // },
+  //  {
+  //   code: "ar",
+  //   label: "Arabic",
+  //   flag: "https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png",
+  // },
 ];
 
 const LanguageSwitcher = () => {

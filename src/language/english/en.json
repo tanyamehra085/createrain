@@ -1,4 +1,7 @@
 {
   "campaigns": "Campaigns",
-  "search": "Search Influencer"
+  "MatchingKeywords": "Matching Keywords",
+  "InfluencerResults":"Influencer Results",
+  "FilterbyFollowers":"Filter by Followers",
+  "Thispreview":"This preview shows the first 100 matched influencers. For full access to all matches, detailed analytics, and advanced filtering options, please upgrade to our premium plan."
 }

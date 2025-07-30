@@ -3,7 +3,8 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import english from './language/english/en.json';
-import hindi from './language/hindi/hi.json';
+import spanish from './language/spanish/sp.json';
+import china from './language/china/ch.json'
 
 i18n
   .use(LanguageDetector)
@@ -11,7 +12,8 @@ i18n
   .init({
     resources: {
       en: { common: english },
-      hi: { common: hindi }
+      es: { common: spanish },
+      zh:{common:china}
     },
     fallbackLng: 'en',
     lng: 'en',

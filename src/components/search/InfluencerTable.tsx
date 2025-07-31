@@ -195,11 +195,7 @@ const { t } = useTranslation();
     });
   };
 
-  const AvgViewsBox = ({ views }: { views: number }) => {
-  const maxViews = 50000; // set your max threshold
-  const percentage = Math.min((views / maxViews) * 100, 100);
-  const filledBars = Math.round((percentage / 100) * 6);
-  const totalBars = 6;
+
 
   const AvgViewsBox = ({ views }: { views: number }) => {
     const maxViews = 50000; // set your max threshold

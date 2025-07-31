@@ -195,6 +195,37 @@ const { t } = useTranslation();
     });
   };
 
+  const AvgViewsBox = ({ views }: { views: number }) => {
+  const maxViews = 50000; // set your max threshold
+  const percentage = Math.min((views / maxViews) * 100, 100);
+  const filledBars = Math.round((percentage / 100) * 6);
+  const totalBars = 6;
+
+  return (
+    <div className="flex items-center justify-between px-3 py-2 bg-[#aacfdc94] rounded-lg w-full max-w-[200px] shadow-sm">
+      {/* Percentage Value */}
+      <span className="text-sm font-semibold text-gray-800">
+        {Math.round(percentage)}%
+      </span>
+
+      {/* Bar */}
+      <div className="flex gap-[3px] ml-2">
+        {Array.from({ length: totalBars }).map((_, index) => (
+          <div
+            key={index}
+            className={`h-3 w-4 rounded-[4px] transition-all ${
+              index < filledBars
+                ? 'bg-[#80bbd0]'  // filled color matching card
+                : 'bg-[#c6dfeb]'  // unfilled color
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
   return (
     <div className="overflow-x-auto shadow-sm ml-4 mr-4">
       {loading ? (
@@ -293,10 +324,14 @@ const { t } = useTranslation();
                       <strong>Followers:</strong>{" "}
                       {formatFollowers(item.followers)}
                     </p>
-                    <p>
+{/*                     <p>
                       <strong>Avg Views:</strong>{" "}
                       {item.averageViews.toLocaleString()}
-                    </p>
+                    </p> */}
+                      <div className="mt-3">
+  <p className="text-xs text-gray-600 font-medium mb-1">Avg Views</p>
+  <AvgViewsBox views={item.averageViews} />
+</div>
                     {/* <p>
           <strong>Engagement:</strong> {item.engagement || "N/A"}
         </p> */}

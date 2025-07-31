@@ -201,29 +201,36 @@ const { t } = useTranslation();
   const filledBars = Math.round((percentage / 100) * 6);
   const totalBars = 6;
 
-  return (
-    <div className="flex items-center justify-between px-3 py-2 bg-[#aacfdc94] rounded-lg w-full max-w-[200px] shadow-sm">
-      {/* Percentage Value */}
-      <span className="text-sm font-semibold text-gray-800">
-        {Math.round(percentage)}%
-      </span>
+  const AvgViewsBox = ({ views }: { views: number }) => {
+    const maxViews = 50000; // set your max threshold
+    const percentage = Math.min((views / maxViews) * 100, 100);
+    const filledBars = Math.round((percentage / 100) * 6);
+    const totalBars = 6;
 
-      {/* Bar */}
-      <div className="flex gap-[3px] ml-2">
-        {Array.from({ length: totalBars }).map((_, index) => (
-          <div
-            key={index}
-            className={`h-3 w-4 rounded-[4px] transition-all ${
-              index < filledBars
-                ? 'bg-[#172d4f6f]'  // filled color matching card
-                : 'bg-[#c6dfeb]'  // unfilled color
-            }`}
-          />
-        ))}
+    return (
+      <div className="flex items-center justify-start px-3 py-2 bg-[#aacfdc66] rounded-lg w-full max-w-[160px] shadow-sm">
+        {/* Percentage Value */}
+        <span className="text-sm font-semibold text-gray-800">
+          {Math.round(percentage)}%
+        </span>
+
+        {/* Bar */}
+        <div className="flex gap-[5px]  ml-2">
+          {Array.from({ length: totalBars }).map((_, index) => (
+            <div
+              key={index}
+              className={`h-3 w-2 rounded-sm transition-all ${
+                index < filledBars
+                  ? "bg-[#172d4f6f]" // filled color matching card
+                  : "bg-[#172d4f26]" // unfilled color
+              }`}
+            />
+          ))}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
+
 
 
   return (

@@ -215,7 +215,7 @@ const { t } = useTranslation();
             key={index}
             className={`h-3 w-4 rounded-[4px] transition-all ${
               index < filledBars
-                ? 'bg-[#80bbd0]'  // filled color matching card
+                ? 'bg-[#172d4f6f]'  // filled color matching card
                 : 'bg-[#c6dfeb]'  // unfilled color
             }`}
           />
